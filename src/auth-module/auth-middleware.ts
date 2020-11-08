@@ -1,6 +1,6 @@
 import { NestMiddleware } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { getSessionBySessionId } from './okta-client';
+import { getSessionBySessionId } from '../auth.module/okta-client';
 
 export class AuthMiddleware implements NestMiddleware {
   async use(req: Request, res: Response, next: Function) {

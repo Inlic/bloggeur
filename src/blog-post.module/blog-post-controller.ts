@@ -2,7 +2,7 @@ import { Body, Controller, Get, NotFoundException, Param, Post, Req, UseGuards }
 import { ApiModelProperty, ApiResponse } from '@nestjs/swagger';
 import { IsAuthenticatedGuard } from '../auth-module/is-authenticated-guard';
 import { IsNotEmpty } from 'class-validator';
-import { getUserById } from '../auth-module/okta-client';
+import { getUserById } from '../auth.module/okta-client';
 import { User } from '../user-module/user-controller';
 
 export class BlogPost {
@@ -53,8 +53,6 @@ export default class BlogPostController {
 
     return newBlogPost;
   }
-
-  //NOTE authentication not working as intented, naming conventions may be to blame
 
   @Get(':id/author')
   async findAuthor(@Param('id') blogPostId: string): Promise<User> {

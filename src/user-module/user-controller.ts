@@ -1,7 +1,7 @@
 import { Body, Controller, Get, NotFoundException, Param, Post, Req } from '@nestjs/common';
 import { ApiModelProperty, ApiResponse } from '@nestjs/swagger';
 
-import { getUserById, register, sessionLogin } from '../auth-module/okta-client';
+import { getUserById, register, sessionLogin } from '../auth.module/okta-client';
 import { IsEmail, IsNotEmpty } from 'class-validator';
 import { Request } from 'express';
 
