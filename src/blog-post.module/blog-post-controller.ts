@@ -56,12 +56,12 @@ export default class BlogPostController {
 
   //NOTE authentication not working as intented, naming conventions may be to blame
 
-  // @Get(':id/author')
-  // async findAuthor(@Param('id') blogPostId: string): Promise<User> {
-  //   const blogPost = blogPosts.filter(post => post.id.toString() === blogPostId)[0];
-  //   if (!blogPost) {
-  //     throw new NotFoundException('No such blog post');
-  //   }
-  //   return await getUserById(blogPost.authorId);
-  // }
+  @Get(':id/author')
+  async findAuthor(@Param('id') blogPostId: string): Promise<User> {
+    const blogPost = blogPosts.filter(post => post.id.toString() === blogPostId)[0];
+    if (!blogPost) {
+      throw new NotFoundException('No such blog post');
+    }
+    return await getUserById(blogPost.authorId);
+  }
 }
