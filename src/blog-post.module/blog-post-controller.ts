@@ -1,8 +1,8 @@
 import { Body, Controller, Get, NotFoundException, Param, Post, Req, UseGuards } from '@nestjs/common';
 import { ApiModelProperty, ApiResponse } from '@nestjs/swagger';
-import { IsAuthenticatedGuard } from '../auth-module/is-authenticated-guard';
+import { IsAuthenticatedGuard } from '../auth.module/is-authenticated-guard';
 import { IsNotEmpty } from 'class-validator';
-import { getUserById } from '../auth.module/okta-client';
+import { getUserById } from '../auth-module/okta-client';
 import { User } from '../user-module/user-controller';
 
 export class BlogPost {

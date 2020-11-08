@@ -1,6 +1,6 @@
 import { Body, Controller, Post, Req, UnauthorizedException } from '@nestjs/common';
 import { ApiModelProperty, ApiResponse } from '@nestjs/swagger';
-import { sessionLogin } from '../auth.module/okta-client';
+import { sessionLogin } from '../auth-module/okta-client';
 import { Request } from 'express';
 
 /*
